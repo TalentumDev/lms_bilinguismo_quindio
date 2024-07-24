@@ -7,6 +7,7 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+      - "aulasquindio.local:host-gateway"
     environment:
       MOODLE_DATABASE_TYPE: mysqli
       MOODLE_DATABASE_HOST: host.docker.internal
@@ -30,10 +31,11 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+      - "aulasquindio.local:host-gateway"
     environment:
       - KEYCLOAK_CLIENT_ID=si-frontend
       - KEYCLOAK_CLIENT_SECRET=eTIgkF82upQVga3JLCu7XKCyntlo9ieV
-      - KEYCLOAK_HOST=http://accounts.aulasquindio.local/auth
+      - KEYCLOAK_HOST=http://aulasquindio.local:8080/auth
       - KEYCLOAK_REALM=bilinguismoquindio
       - NEXT_PUBLIC_DEFAULT_AUTH_PROVIDER=keycloak
       - NEXT_PUBLIC_BACKEND=http://aulasquindio.local:4002
@@ -49,6 +51,7 @@ services:
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
+      - "aulasquindio.local:host-gateway"
     environment:
       DB_DATABASE: "reporter"
       DB_HOST: host.docker.internal
